@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/faucetstylee.css">
+    <title>SuperiorFaucet</title>
+    
+    <!-- SCRIPTS --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <head>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/sup-logo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+    Superior Coin
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#modal1" data-toggle="modal" data-target="#modal1">Claim</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#modal2" data-toggle="modal" data-target="#modal2">Tranfer</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </head>
+    
+    <div class="container">
+       <div class="hero-balance">
+            <div class="row">
+                <div class="col balance rounded">
+                    <h4>Balance</h4>
+                    <span id="balance"><p>0</p></span>    
+                    <br/>
+                </div><!--BALANCE ENDS-->
+
+                <div class="col unlock-balance rounded">
+                    <h4>Unlock-Balance</h4>
+                    <span id="unlock-balance"><p>0</p></span>
+                    <br/>
+                </div> <!--UNLOCK-BALANCE ENDS-->
+
+                <div class="col total-balance rounded">
+                    <h4>Total-Balance</h4>
+                    <span id="total-balance"><p>0</p></span>
+                    <br/>
+                </div> <!--TOTAL-BALANCE ENDS-->
+            </div> <!--ROW ENDS-->
+        </div> <!--HERO-BALANCE ENDS-->
+        
+        
+    <div class="row">
+         <div class="col-sm-6 pool">
+            <h2>200,000.00</h2>
+         </div><!--ENDS POOL-->
+                    
+        <div class="widget-container col-xs-12 col-md-6">
+           <div class="coinmarketcap-currency-widget" data-currencyid="2522" data-base="USD" data-secondary="BTC" data-ticker="true" data-rank="true" data-marketcap="false" data-volume="true" data-stats="USD" data-statsticker="true"></div>
+        </div> <!-- WIDGET ENDS -->
+    </div> <!--ENDS ROW-->
+    <br/><br/><br/><br/>
+    
+    </div> 
+    
+    <!-- Modal -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Claim</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <form id="form">
+                <div class="form-group-claim">
+                    <label for="claim">5sup Every 10 minutes !</label>
+                    <br/><br/>
+                    <button id="btnClaim" type="button" class="btn btn-success btn-lg">Claim</button>
+                    </div> <!--FORM-GRTOUP ENDS-->
+                    <br>  
+            </form> <!--ENDS FORM-->
+        </form> <!--FORM ENDS-->
+      </div> <!--MODA-BODY ENDS-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> <!--MODAL TRANFER ENDS-->
+        
+    <!-- Modal Tranfer-->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Tranfers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <form id="form">
+                <div class="form-group">
+                    <label for="destination">Account Destination</label>
+                    <input type="text" id="destination" placeholder="Wallet Address" class="form-control" required />
+                    </div> <!--FORM-GRTOUP ENDS-->
+
+                    <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" id="amount" placeholder="100,000.00 SUP" class="form-control" required/>
+                    </div> <!--FORM-GROUP ENDS-->
+                    <br>  
+                    <button id="btnSend" type="button" class="btn btn-success">Send</button>
+            </form> <!--ENDS FORM-->
+        </form> <!--FORM ENDS-->
+      </div> <!--MODA-BODY ENDS-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> <!--MODAL TRANFER ENDS-->
+    
+     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--SCRIPTS-->
+    <script src="js/main.js"></script>
+    
+</body>
+
+<footer class="ends">
+    @Superior Coin Copyright
+</footer>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
