@@ -2,8 +2,8 @@
 //Connection Variables
 $host = "localhost";
 $user = "root";
-$password = "";
-$db = "superiorf";
+$password = "MrRobot.2018";
+$db = "SuperiorF";
 
 //Set connection to MySQL
 $cnn = mysqli_connect($host,$user,$password,$db);
