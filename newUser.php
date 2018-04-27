@@ -2,7 +2,7 @@
 header('Content-type: application/json; charset=utf8');
 include ("./connex.php"); //include db connection. import $cnn variable.
 
-if (isset($_POST['user_name'] && $_POST['user_email'] && $_POST['user_pw'] && $_POST['user_address'])) 
+if (($_POST['user_name'] != null) && ($_POST['user_email'] != null) && ($_POST['user_pw'] != null) && ($_POST['user_address']!= null)) 
 {
 	$user_name    = $_POST['user_name'];
 	$user_email   = $_POST['user_email'];
@@ -24,7 +24,7 @@ if (isset($_POST['user_name'] && $_POST['user_email'] && $_POST['user_pw'] && $_
     }
     else
     {
-    	$salted = "4566654jyttgdjgghjygg".$pw."yqwsx6890d"; //encryptin pw
+    	$salted = "4566654jyttgdjgghjygg".$user_pw."yqwsx6890d"; //encryptin pw
         $hashed = hash("sha512", $salted); //encryptin pw
     	$query = "INSERT INTO users(user_name,user_email,user_pw,user_address,user_type) VALUES('$user_name','$user_email','$hashed','user_address','$type')";
 
