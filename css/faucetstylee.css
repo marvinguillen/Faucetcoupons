@@ -1,0 +1,72 @@
+/*FIRST SECTION*/
+.hero{
+    margin: 15px;
+}
+.hero h1{
+    text-align: center;
+}
+
+.hero-content{
+    text-align: center;
+}
+
+.hero-content input[type="text"]{
+    width: 300px;
+    text-align: center;
+}
+
+.goBtn{
+    text-align: center;
+    margin-top: 15px;
+    letter-spacing: 0.2rem;
+}
+
+.upBtn{
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 10px;
+    letter-spacing: 0.2rem;
+}
+
+/*SECOND SECTION*/
+
+.info-page{
+    text-align: center;
+}
+
+.info-page p{
+    margin-top: 20px;
+}
+
+.info-coins{
+    text-align: center;
+}
+
+.info-coins p{
+    margin-top: 20px;
+}
+
+.info-donate{
+    text-align: center;
+}
+
+.info-donate p{
+    margin-top: 20px;
+}
+
+.pool h2{
+    text-align: center;
+    margin-top: 20%;
+}
+
+/*FOOTER SECTION*/
+.ends{
+    text-align: center;
+    background-color: black;
+    height: auto;
+    font-size: 40px;
+}
+.parallax{
+    background: #fff no-repeat 50% 50%;
+    background-size: cover;
+}

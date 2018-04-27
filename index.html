@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/faucetstylee.css">
+    <title>SuperiorFaucet</title>
+    
+    <!-- SCRIPTS --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <div class="container">
+        
+               <div class="col hero">
+                    <h1>Welcome to Superior Faucet</h1>
+               </div> <!--ENDS HERO-->
+
+                <div class="col hero-content">
+                    <img src="assets/img/sup-logo.png" alt="SUPERIOR-LOGO" class="center-block img-circle logo-margin-negative">
+                    <br/>
+                    <input id="wallet" type="text" placeholder="Enter your Wallet Addres">
+                    <br/>
+                    <button class="goBtn btn btn-dark">GO</button>
+                    <button class="btn btn-dark upBtn" data-toggle="modal" data-target="#modal1">Sign Up</button>
+                </div> <!-- ENDS SUP-IMG-->
+                
+                <div class="modal fade" id="modal1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Please Fill the Information Below</h5>
+                                <button type="button" class="close" data-dismiss="modal" arial-label="Close">&times;</button>
+                            </div> <!--ENDS MODAL-HEADER-->
+                            
+                            <div class="modal-body">
+                                <form id="form">
+                                    <div class="form-group">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" id="user_name" placeholder="Could be a Username" class="form-control" required />
+                                        </div>
+
+                                        <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="text" id="user_email" placeholder="Email Address" class="form-control" required/>
+                                        </div>
+
+                                         <div class="form-group" id="formpass">
+                                           <label for="pass">Password</label>
+                                           <input type="password" id="user_pw" placeholder="Password" class="form-control" required />
+                                          </div>
+                                            <div class="form-group">
+                                            <label for="cpass">Repeat Password</label>
+                                            <input type="password" id="cpass" placeholder="Repeat Password" class="form-control" required />
+                                            </div>
+
+                                            <div class="form-group">
+                                            <label for="walletad">Wallet Address</label>
+                                            <input type="text" id="user_address" placeholder="Wallet-Address" class="form-control" required />
+                                            </div>		
+                                            <br> 	
+                                            <button id="submit" type="button" class="btn btn-success">Sign me up!</button>
+                                </form> <!--ENDS FORM-->
+                            </div> <!--ENDS MODAL-BODY-->
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div> <!-- ENDS MODAL-CONTENT-->
+                    </div><!--ENDS MODAL DIALOG-->
+                </div> <!--ENDS MODAL-->
+                
+                <div class="modal fade" id="succes_signup_modal" tabindex="-1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header modal-header-success">
+			  <h4 style="color:white;" class="modal-title"> <i class="glyphicon glyphicon-thumbs-up"></i> Thanks! </h4>
+			</div>
+			<div class="modal-body">
+			  <p>You have successfully signed up to Superior Coin!</p>
+			</div>
+			<div class="modal-footer">
+			  <button id="enter_main" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-hand-pointer fa-2x"></i></button>
+			</div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+
+	  <div class="modal fade" id="alert_modal" tabindex="-1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+			<div class="modal-header modal-header-error">
+			  <h4 style="color:white;" class="modal-title">Wait!</h4>
+			</div>
+			<div class="modal-body">
+			  <p class="custom-text" id="alert_msg"></p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+			</div>
+		  </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	  </div><!-- /.modal -->
+                <br/><br/><br/><br/>
+                
+                <div class="row">
+                    <div class="col-sm-4 info-page">
+                        <img id="info-img" src="assets/img/info.png" alt="INFO_ICON" >
+                         <p>Superior Coin Faucet is a site where you can win money easier. The only thing you have to do, is sign up and collect coins every hour.</p>
+                    </div> <!--ENDS INFO PAGE-->
+                    
+                    <div class="col-sm-4 info-coins">
+                        <img id="coins-img" src="assets/img/coins.png" alt="COINS_ICON">
+                         <p>Superior Coin is a secure, private, untraceable currency. Unlike many crypto currencies that are derivatives of Bitcoin, Superior Coin is based on the CryptoNote protocol and possesses significant algorithmic differences relating to blockchain obfuscation.<p>
+                    </div> <!--ENDS INFO COINS-->
+                    
+                    <div class="col-sm-4 info-donate">
+                        <img id="donate-img" src="assets/img/donate.png" alt="DONATE_ICON">
+                        <p>You can also donate to our faucet You will be a STAR member of Superior Coin.<p>
+                    </div> <!--ENDS INFO DONATE-->
+                </div><!--ENDS ROW-->
+                <br/><br/><br/><br/>
+                
+                <div class="row">
+                    <div class="col-sm-6 pool">
+                        <h2>200,000.00</h2>
+                    </div><!--ENDS POOL-->
+                    
+                    <div class="widget-container col-xs-12 col-md-6">
+                       <div class="coinmarketcap-currency-widget" data-currencyid="2522" data-base="USD" data-secondary="BTC" data-ticker="true" data-rank="true" data-marketcap="false" data-volume="true" data-stats="USD" data-statsticker="true"></div>
+                    </div> <!-- WIDGET ENDS -->
+                </div> <!--ENDS ROW-->
+                <br/><br/><br/><br/>
+            
+    </div> <!-- ENDS CONTAINER-FLUID -->
+    
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!--SCRIPTS-->
+    <script src="js/main.js"></script>
+</body>
+
+<footer class="ends">
+    @Superior Coin Copyright
+</footer>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href=""><style></style>
