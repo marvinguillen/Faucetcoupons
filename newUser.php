@@ -1,6 +1,6 @@
 <?php 
 header('Content-type: application/json; charset=utf8');
-include ("./newUser.php"); //include db connection. import $cnn variable.
+include ("./connex.php"); //include db connection. import $cnn variable.
 
 if (isset($_POST['user_name'] && $_POST['user_email'] && $_POST['user_pw'] && $_POST['user_address'])) 
 {
