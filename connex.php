@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "MrRobot.2018";
-$db = "SuperiorF";
+$db = "superiorf";
 
 //Set connection to MySQL
 $cnn = mysqli_connect($host,$user,$password,$db);
