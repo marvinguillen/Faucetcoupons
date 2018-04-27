@@ -47,15 +47,15 @@ function verifyUser(){
 		{
 			$.post('./newUser.php',
 			{
-				user_name   : name,
-				user_email  : email,
-				user_pw     : pw,
-				user_address: wallet
+				user_name    : name,
+				user_email   : email,
+				user_pw      : pw,
+				user_address : wallet
 			},function(data)
 			{    
-                if(data.status == 200)
+                if(data.status == 404)
                 {
-                    $("#msg").innerHTML(data.message);  
+                    $("#msg").text(data.message);  
                 }
 				else if(data.user_email == email)
 				{
