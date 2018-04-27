@@ -1,4 +1,5 @@
-<?php  
+<?php 
+ini_set('display_errors', true); 
 //Connection Variables
 $host = "localhost";
 $user = "root";
