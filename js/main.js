@@ -8,6 +8,9 @@ function verifyUser(){
 		var msg    = $('#msg');
 		var result = validate();
 
+		alert(user_address);
+		alert(user_pw);
+
 		if (name == '') 
 		{
 			msg.text("Your Name is Requiered! Please enter your Name or Username");
