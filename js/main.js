@@ -8,8 +8,8 @@ function verifyUser(){
 		var msg    = $('#msg');
 		var result = validate();
 
-		alert(user_address);
-		alert(user_pw);
+		alert(wallet);
+		alert(pw);
 
 		if (name == '') 
 		{
@@ -56,11 +56,7 @@ function verifyUser(){
 				user_address : wallet
 			}).done(function(data)
 			{    
-                if(data.status == 404)
-                {
-                    $("#msg").text(data.message);  
-                }
-				else if(data.user_email == email)
+  				if(data.user_email == email)
 				{
 					$("#msg").text("There is an account registered whith this email");
                     $("#user_email").focus();
@@ -69,19 +65,22 @@ function verifyUser(){
 				{
 					$("#msg").text("There is an account registered with this wallet address");
                     $("#user_address").focus();
-				}
+				}         
+				else if(data.status == 404)
+                {
+                    $("#msg").text(data.message);  
+                }
 				else
 				{	
 					alert("succes");
-					/*
 					$("#msg").text("");
-					$("#wallet").val(wallet);
+					$("#user_address").val(wallet);
                     $("#user_name").val("");
                     $("#user_email").val("");
                     $("#user_pw").val("");
                     $("#cpass").val("");
                     $("#user_address").val("");
-                    */
+             
                     //open modal alert
                     $("#succes_signup_modal").modal("show");
 				}
