@@ -51,7 +51,7 @@ function verifyUser(){
 				user_email   : email,
 				user_pw      : pw,
 				user_address : wallet
-			},function(data)
+			}).done(function(data)
 			{    
                 if(data.status == 404)
                 {
@@ -68,7 +68,9 @@ function verifyUser(){
                     $("#user_address").focus();
 				}
 				else
-				{
+				{	
+					alert("succes");
+					/*
 					$("#msg").text("");
 					$("#wallet").val(wallet);
                     $("#user_name").val("");
@@ -76,6 +78,7 @@ function verifyUser(){
                     $("#user_pw").val("");
                     $("#cpass").val("");
                     $("#user_address").val("");
+                    */
                     //open modal alert
                     $("#succes_signup_modal").modal("show");
 				}
