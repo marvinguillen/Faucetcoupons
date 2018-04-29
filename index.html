@@ -22,10 +22,10 @@
                 <div class="col hero-content">
                     <img src="assets/img/sup-logo.png" alt="SUPERIOR-LOGO" class="center-block img-circle logo-margin-negative">
                     <br/>
-                    <input id="wallet" type="text" placeholder="Enter your Wallet Addres">
+                    <input id="txtWallet" type="text" placeholder="Enter your Wallet Addres">
                     <br/>
-                    <button class="goBtn btn btn-dark">GO</button>
-                    <button class="btn btn-dark upBtn" data-toggle="modal" data-target="#modal1">Sign Up</button>
+                    <button id="btnLogIn" type="button" type="button" class="goBtn btn btn-dark">GO</button>
+                    <button id="btnSignUp" class="btn btn-dark upBtn" type="button" data-toggle="modal" data-target="#modal1">Sign Up</button>
                 </div> <!-- ENDS SUP-IMG-->
                 
                 <div class="modal fade" id="modal1">
@@ -33,6 +33,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title">Please Fill the Information Below</h5>
+                                <br/>
                                 <span id="msg"></span>
                                 <button type="button" class="close" data-dismiss="modal" arial-label="Close">&times;</button>
                             </div> <!--ENDS MODAL-HEADER-->
@@ -80,8 +81,12 @@
 			<div class="modal-header modal-header-success">
 			  <h4 style="color:white;" class="modal-title"> <i class="glyphicon glyphicon-thumbs-up"></i> Thanks! </h4>
 			</div>
-			<div class="modal-body">
-			  <p>You have successfully signed up to Superior Coin!</p>
+			<div class="modal-body succes_signup_modal">
+              <h2><span id="spnUser"></span></h2>
+			  <p>Welcome you have successfully signed up to Superior Coin!</p>
+			  <br/>
+			  <br/>
+			  <button id="btnRedirect" type="button" class="btn btn-succes" data-dismiss="modal">OK</button>
 			</div>
 			<div class="modal-footer">
 			  <button id="enter_main" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-hand-pointer fa-2x"></i></button>
@@ -94,13 +99,15 @@
 		<div class="modal-dialog">
 		  <div class="modal-content">
 			<div class="modal-header modal-header-error">
-			  <h4 style="color:white;" class="modal-title">Wait!</h4>
+			  <h3 style="color:black;" class="modal-title">Wait!</h3>
 			</div>
 			<div class="modal-body">
-			  <p class="custom-text" id="alert_msg"></p>
+             <span id="alert_msg" style="color:black;"></span>
+             <br/>
+			  <button class="btn btn-dark upBtn" type="button" data-toggle="modal" data-target="#modal1">Sign Up</button>
 			</div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
+			  <button id="btnOk" type="button" type="button" class="btn btn-danger" data-dismiss="modal">OK</button>
 			</div>
 		  </div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->

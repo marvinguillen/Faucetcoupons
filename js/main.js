@@ -1,3 +1,36 @@
+function logIn(){
+    var address = $("#txtWallet").val();
+    var msg     = $("#aler_msg");
+    alert(address);
+    if(address == '')
+        {
+            alert("You need enter a Walled/Email Address");
+            //CODE BELOW IS NOT WORCKIN PRPERL
+            $("#alert_modal").modal("show");
+            msg.innerHTML = "You need enter a Walled/Email Address";
+            $("#txtWallet").focus();
+            //SINCE HERE
+        }
+    else
+    {
+        $.post('./getUser.php',
+               {
+                user_address : address
+               }).done(function(data)
+                       {
+                            if(data.status == 404)
+                                {
+                                    $("#alert_modal").modal("show");
+                                    msg.innerHTML = "This Address does not exist, please Sign-Up first";
+                                }
+                            else
+                                {
+                                    location.href ="http://https://faucet.the-superior-coin.net/faucet.html";
+                                }
+        });
+    }
+}
+
 
 function verifyUser(){
         var name   = $('#user_name').val();
@@ -7,9 +40,6 @@ function verifyUser(){
 		var wallet = $('#user_address').val();
 		var msg    = $('#msg');
 		var result = validate();
-
-		alert(wallet);
-		alert(pw);
 
 		if (name == '') 
 		{
@@ -83,6 +113,7 @@ function verifyUser(){
              
                     //open modal alert
                     $("#succes_signup_modal").modal("show");
+                    $("#spnUser").text(name);
 				}
 			});
 		}
@@ -105,7 +136,23 @@ function validate(){
 
 $(document).ready(function(){
     
+    $("#btnLogIn").click(function(){
+        logIn();
+    })
+    
     $("#submit").click(function(){
         verifyUser();
+    })
+    
+    $("#btnRedirect").click(function(){
+        location.href ="http://https://faucet.the-superior-coin.net/faucet.html";
+    })
+    
+    $("btnOk").click(function(){
+        $("#aler_modal").modal("hide");
+    })
+    
+    $("btnSignUp").click(function(){
+        $("#aler_modal").modal("hide");
     })
 });

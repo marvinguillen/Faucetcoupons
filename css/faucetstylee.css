@@ -28,6 +28,15 @@
     letter-spacing: 0.2rem;
 }
 
+#alert_msg{
+    color: black;
+    font-size: 18px;
+}
+
+.succes_signup_modal{
+    text-align: center;
+}
+
 /*SECOND SECTION*/
 
 .info-page{
