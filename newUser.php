@@ -29,7 +29,17 @@ include ("./connex.php"); //include db connection. import $cnn variable.
     	if(!$result = mysqli_query($cnn,$query)) 
     	{
     		exit(mysqli_error($cnn));
-    	}
+    	}else{
+            $query2 = "SELECT id_user FROM users WHERE user_address = '$user_address'";
+            if(!$result = mysqli_query($cnn,$query2)) 
+            {
+                exit(mysqli_error($cnn));
+            }
+            
+            $response = mysqli_fetch_row($result);
+            $query3 = "INSERT INTO wallet(wallet_balance,wallet_unlock,balance_total,user_id)VALUES(0, 0, 0, '$response')";
+    
+        }
 
          $response['status'] = 200;
          $response['message'] = "Succes !";
