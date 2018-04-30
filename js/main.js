@@ -145,7 +145,7 @@ $(document).ready(function(){
     })
     
     $("#btnRedirect").click(function(){
-        window.location.href = "faucet.html";
+    	window.location.href = "faucet.html";
     })
     
     $("btnOk").click(function(){
