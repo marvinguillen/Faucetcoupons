@@ -25,7 +25,7 @@ function logIn(){
                                 }
                             else
                                 {
-                                    location.href ="http://https://faucet.the-superior-coin.net/faucet.html";
+                                	window.location.href = "faucet.html";
                                 }
         });
     }
@@ -145,7 +145,7 @@ $(document).ready(function(){
     })
     
     $("#btnRedirect").click(function(){
-        location.href ="http://https://faucet.the-superior-coin.net/faucet.html";
+        window.location.href = "faucet.html";
     })
     
     $("btnOk").click(function(){
