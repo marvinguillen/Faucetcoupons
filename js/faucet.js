@@ -13,8 +13,8 @@ function getBalance(){
         }
         else{
             $("#balance").innerHTML = data.wallet_balance;
-            $("#unlock-balance").val(data.wallet_unlock);
-            $("#total").val(data.wallet_total);
+            $("#unlock-balance").innerHTML = data.wallet_unlock;
+            $("#total").innerHTML = data.wallet_total;
         }
     });
 }
