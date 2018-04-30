@@ -1,4 +1,4 @@
-function getBalance{
+function getBalance(){
     //NOT COMPLETED TEST VARIABLE
     var address = "5NbCTMansKp1AmRUV9sxxcBJEi4avk3dt7RsXsxo6vFVSqZCTEsuCgXTiQZCsKM5TdGQD2m6UpM58KoDLEtX7ofH61t9hNZ";
 
