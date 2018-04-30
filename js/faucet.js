@@ -12,9 +12,9 @@ function getBalance(){
             alert(data.message);
         }
         else{
-            $("#balance").txt(data.wallet_balance);
-            $("#unlock-balance").txt(data.wallet_unlock);
-            $("#total").txt(data.wallet_total);
+            $("#balance").innerHTML = data.wallet_balance;
+            $("#unlock-balance").val(data.wallet_unlock);
+            $("#total").val(data.wallet_total);
         }
     });
 }
