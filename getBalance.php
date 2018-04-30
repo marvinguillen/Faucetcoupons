@@ -1,7 +1,7 @@
 <?php 
 include("./connex.php");
 
-$user_address    = ['user_address'];
+$user_address    = $_POST['user_address'];
 $response        = array();
 //	$cnn          = include;
 
