@@ -5,6 +5,7 @@ include ("./connex.php"); //include db connection. import $cnn variable.
     $user_email   = $_POST['user_email'];
     $user_pw      = $_POST['user_pw'];
     $user_address = $_POST['user_address'];
+    $succes  = false;
     $response= array();
     $type    = 0; //user_type will be 0 by default as player 1 will be donate member
 //  $cnn     = include
@@ -39,11 +40,21 @@ include ("./connex.php"); //include db connection. import $cnn variable.
             $data = mysqli_fetch_row($result);
             $user_id = (int) $data[0];
             $query3 = "INSERT INTO wallet(wallet_balance,wallet_unlock,wallet_total,user_id)VALUES(0, 0, 0, '$user_id')";
+            if(!$result = mysqli_query($cnn,$query3)) 
+            {
+                exit(mysqli_error($cnn));
+            }else{
+                $response['status'] = 200;
+                $response['message'] = "Succes !";
+                $succes = true;
+            }
     
         }
 
+        if ($succes) {
          $response['status'] = 200;
          $response['message'] = "Succes !";
+        }
 
     }
     header('Content-type: application/json; charset=utf8');
