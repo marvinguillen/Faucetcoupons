@@ -31,7 +31,6 @@ if($user_address != null)
 	 	 		$response['status'] = 404;
 				$response['message'] = "Invalid Request !";	
  	     }	 
-}
  	     
 	    header('Content-type: application/json; charset=utf8');
     	echo json_encode($response);
