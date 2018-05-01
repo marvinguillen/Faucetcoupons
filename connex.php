@@ -3,7 +3,7 @@ ini_set('display_errors', true);
 //Connection Variables
 $host = "localhost";
 $user = "root";
-$password = "MrRobot.2018";
+$password = "";//"MrRobot.2018";
 $db = "superiorf";
 
 //Set connection to MySQL

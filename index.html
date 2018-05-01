@@ -25,8 +25,28 @@
                     <input id="txtWallet" type="text" placeholder="Enter your Wallet Addres">
                     <br/>
                     <button id="btnLogIn" type="button" type="button" class="goBtn btn btn-dark">GO</button>
-                    <button id="btnSignUp" class="btn btn-dark upBtn" type="button" data-toggle="modal" data-target="#modal1">Sign Up</button>
+                    <button id="btnSignUp" class="btn btn-dark upBtn" type="button" data-toggle="modal" data-target="#modal1">Check up coupons</button>
                 </div> <!-- ENDS SUP-IMG-->
+
+                <!--new modals-->
+                <div class="modal fade" id="erno_modal">
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <!---->
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Error!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                                    </button>
+                        </div><!--End modal -header-->
+                                                <div class="modal-body">
+                                <p>The event has been reported to the erroneous code history!</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                    </div><!--End modal-dialog-->
+
+                </div><!-- End modal fade-->
                 
                 <div class="modal fade" id="modal1">
                     <div class="modal-dialog">
@@ -51,12 +71,12 @@
                                         </div>
 
                                          <div class="form-group" id="formpass">
-                                           <label for="pass">Password</label>
-                                           <input type="password" id="user_pw" placeholder="Password" class="form-control" required />
+                                           <label for="pass">Cellphone</label>
+                                           <input type="text" id="user_cell" placeholder="Cellphone" class="form-control" required />
                                           </div>
                                             <div class="form-group">
-                                            <label for="cpass">Repeat Password</label>
-                                            <input type="password" id="cpass" placeholder="Repeat Password" class="form-control" required />
+                                            <label for="cpass">Code Secret</label>
+                                            <input type="text" id="user_codigo_secret" placeholder="Code Secret" class="form-control" required />
                                             </div>
 
                                             <div class="form-group">
@@ -64,7 +84,7 @@
                                             <input type="text" id="user_address" placeholder="Wallet-Address" class="form-control" required />
                                             </div>		
                                             <br> 	
-                                            <button id="submit" type="button" class="btn btn-success">Sign me up!</button>
+                                            <button id="submit" type="button" class="btn btn-success">Check up Coupon!</button>
                                 </form> <!--ENDS FORM-->
                             </div> <!--ENDS MODAL-BODY-->
                             
@@ -83,13 +103,13 @@
 			</div>
 			<div class="modal-body succes_signup_modal">
               <h2><span id="spnUser"></span></h2>
-			  <p>Welcome you have successfully signed up to Superior Coin!</p>
+			  <p>Welcome this coupon is available to get Superior Coin!</p>
 			  <br/>
 			  <br/>
-			  <button id="btnRedirect" type="button" class="btn btn-succes" data-dismiss="modal">OK</button>
+			  <button id="btnRedirect" type="button" class="btn btn-succes" data-dismiss="modal">Ready</button>
 			</div>
 			<div class="modal-footer">
-			  <button id="enter_main" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-hand-pointer fa-2x"></i></button>
+			  <!--button id="enter_main" type="button" class="btn btn-warning" data-dismiss="modal"><i class="fas fa-hand-pointer fa-2x"></i></button-->
 			</div>
 		  </div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
@@ -99,7 +119,7 @@
 		<div class="modal-dialog">
 		  <div class="modal-content">
 			<div class="modal-header modal-header-error">
-			  <h3 style="color:black;" class="modal-title">Wait!</h3>
+			  <h3 style="color:black;" class="modal-title">Wait for a momment!</h3>
 			</div>
 			<div class="modal-body">
              <span id="alert_msg" style="color:black;"></span>

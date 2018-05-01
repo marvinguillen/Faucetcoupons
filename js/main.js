@@ -1,7 +1,8 @@
-function logIn(){
+function	 logIn(){
     var address = $("#txtWallet").val();
     var msg     = $("#aler_msg");
     alert(address);
+    //alert("Estoy aqui en login");
     if(address == '')
         {
             alert("You need enter a Walled/Email Address");
@@ -13,6 +14,7 @@ function logIn(){
         }
     else
     {
+    	//alert("Estoy aqui en el else");
         $.post('./getUser.php',
                {
                 user_address : address
@@ -38,6 +40,8 @@ function verifyUser(){
 		var pw     = $('#user_pw').val(); 
 		var cpass  = $('#cpass').val();
 		var wallet = $('#user_address').val();
+        var usc    = $('#user_codigo_secret').val();
+        var cellphone = $('#user_cell').val();
 		var msg    = $('#msg');
 		var result = validate();
 
@@ -61,11 +65,11 @@ function verifyUser(){
 			msg.text("Password is Requiered! Please enter your Password this will be encrypted");
 			$('#user_pw').focus();
 		}
-		else if(cpass == '' || pw != cpass)
-		{
-			msg.text("Please enter the same Password");
-			$('#cpass').focus();
-		}
+		//else if(cpass == '' || pw != cpass)
+		//{
+			//msg.text("Please enter the same Password");
+		//	$('#cpass').focus();
+		//}
 		else if(wallet == '')
 		{
 			msg.text("Please a Wallet Address is Requiered");
@@ -83,7 +87,10 @@ function verifyUser(){
 				user_name    : name,
 				user_email   : email,
 				user_pw      : pw,
-				user_address : wallet
+				user_address : wallet,
+                user_cell     : cellphone,
+                user_codigo_secret        : usc 
+
 			}).done(function(data)
 			{    
   				if(data.user_email == email)
@@ -100,18 +107,23 @@ function verifyUser(){
                 {
                     $("#msg").text(data.message);  
                 }
+                else if(data.status == 104)
+                {
+                    $("#erno_modal").modal("show");
+                }
 				else
 				{	
-					alert("succes");
+					//alert("succes");
 					$("#msg").text("");
 					$("#user_address").val(wallet);
                     $("#user_name").val("");
                     $("#user_email").val("");
-                    $("#user_pw").val("");
-                    $("#cpass").val("");
+                    //$("#user_pw").val("");
+                    //$("#cpass").val("");
                     $("#user_address").val("");
-             
+             		//alert("Estoy en el parte del else 2");
                     //open modal alert
+
                     $("#succes_signup_modal").modal("show");
                     $("#spnUser").text(name);
 				}
