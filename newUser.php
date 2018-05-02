@@ -13,7 +13,7 @@ include ("./connex.php"); //include db connection. import $cnn variable.
 
  if($user_name != null && $user_email != null && $user_cell != null && $user_address != null &&   $user_codigo_secret != null)   
  {
-	$query = "SELECT * FROM tbl_creator_coupons_details WHERE cod_coupons = '$user_codigo_secret' ";
+	$query = "SELECT * FROM tbl_creator_coupons_details WHERE cod_coupons = '$user_codigo_secret' and coded_used = '0'";
 	if (!$result = mysqli_query($cnn, $query))
         exit(mysqli_error($conn));
     if(mysqli_num_rows($result) > 0)
@@ -29,7 +29,13 @@ include ("./connex.php"); //include db connection. import $cnn variable.
                 {
                     exit(mysqli_error($cnn));
                 }
-                
+                 $query3 = "UPDATE tbl_creator_coupons_details SET coded_used ='1' WHERE cod_coupons = 
+                 '$user_codigo_secret'";
+                 if(!$result = mysqli_query($cnn,$query3)) 
+                {
+                    exit(mysqli_error($cnn));
+                }
+
                 $response['status'] = 200;
 
                 $response['message'] = "Succes !";
@@ -41,8 +47,7 @@ include ("./connex.php"); //include db connection. import $cnn variable.
     	/*$salted = "4566654jyttgdjgghjygg".$user_pw."yqwsx6890d"; //encryptin pw
         $hashed = hash("sha512", $salted); //encryptin pw
     	*/
-       //  alert("Estoy en  newuser parte else.php");
-        $query = "SELECT * FROM tbl_creator_coupons_details WHERE cod_coupons = '$user_codigo_secret'  ";
+        $query = "SELECT * FROM tbl_creator_coupons_details WHERE cod_coupons = '$user_codigo_secret'  and coded_used = '0'";
          
     	if(!$result = mysqli_query($cnn,$query)) 
     	{
@@ -65,7 +70,7 @@ include ("./connex.php"); //include db connection. import $cnn variable.
          $response['status'] = 404;
          $response['message'] = "The event has been reported to the erroneous code history!";
          
-                $query = "INSERT INTO tbl_history_register_cuopons(user_name, user_email, user_address, user_phone, user_id_code, user_observation) VALUES ('$user_name','$user_email','$user_address','$user_cell','$user_codigo_secret','No se ha encontrado el codigo del cupon')";
+                $query = "INSERT INTO tbl_history_register_cuopons(user_name, user_email, user_address, user_phone, user_id_code, user_observation) VALUES ('$user_name','$user_email','$user_address','$user_cell','$user_codigo_secret','This codec is not available.')";
                  if(!$result = mysqli_query($cnn,$query)) 
                 {
                     exit(mysqli_error($cnn));
@@ -73,8 +78,7 @@ include ("./connex.php"); //include db connection. import $cnn variable.
 
                     $response['status'] = 404;
 
-                        //$response['message'] = "El evento ha sido reportado al historial de codigo erroneos !";
-
+                       
                         //header("location: index.html")  
                          
                            // header('refresh:10; index.html');
@@ -91,7 +95,6 @@ include ("./connex.php"); //include db connection. import $cnn variable.
 
     header('Content-type: application/json; charset=utf8');
     echo json_encode($response);
-    //echo "Salida";
 }
 else
 {

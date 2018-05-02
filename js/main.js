@@ -105,10 +105,8 @@ function verifyUser(){
 				}         
 				else if(data.status == 404)
                 {
-                    $("#msg").text(data.message);  
-                }
-                else if(data.status == 104)
-                {
+                   // $("#msg").text(data.message);  
+                    $("#modal1").modal("hide");
                     $("#erno_modal").modal("show");
                 }
 				else
