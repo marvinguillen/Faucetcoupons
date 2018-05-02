@@ -29,7 +29,8 @@ include ("./connex.php"); //include db connection. import $cnn variable.
                 {
                     exit(mysqli_error($cnn));
                 }
-                 $query3 = "UPDATE tbl_creator_coupons_details SET coded_used ='1' WHERE cod_coupons = 
+                 $query3 = "UPDATE tbl_creator_coupons_details SET coded_used = 1
+                  WHERE cod_coupons = 
                  '$user_codigo_secret'";
                  if(!$result = mysqli_query($cnn,$query3)) 
                 {
