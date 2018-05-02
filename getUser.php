@@ -8,7 +8,7 @@ include("./connex.php");
 	  
 	if($user_address != null)
 	{
-		$query ="SELECT * FROM users WHERE user_email = '$user_address' or user_address = '$user_address'"; 
+		$query ="SELECT * FROM users WHERE user_email = '$user_email' or user_address = '$user_address'"; 
 		
 		if (!$result = mysqli_query($cnn, $query))
         exit(mysqli_error($conn));
