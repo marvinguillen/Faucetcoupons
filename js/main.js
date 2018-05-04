@@ -1,8 +1,9 @@
+
 function	 logIn(){
     var address = $("#txtWallet").val();
     var msg     = $("#aler_msg");
     alert(address);
-    //alert("Estoy aqui en login");
+    
     if(address == '')
         {
             alert("You need enter a Walled/Email Address");
@@ -14,7 +15,7 @@ function	 logIn(){
         }
     else
     {
-    	//alert("Estoy aqui en el else");
+    	
         $.post('./getUser.php',
                {
                 user_address : address
@@ -27,6 +28,12 @@ function	 logIn(){
                                 }
                             else
                                 {
+                                    
+                                    localStorage.setItem("walle", data.user_address); //save new cookie on local storage
+                                    var date = new Date();
+                                    var minutes = 30;
+                                    date.setTime(date.getTime() + (minutes * 60 * 1000));
+                                    Cookies.set("session", "foo", {expires : date}); //set new cookie session
                                 	window.location.href = "faucet.html";
                                 }
         });
@@ -111,6 +118,14 @@ function verifyUser(){
                 }
 				else
 				{	
+
+                    //Cookie
+                    localStorage.setItem("walle", user_address);
+                    var date = new Date();
+                    var minutes = 30;
+                    date.setTime(date.getTime() + (minutes * 60 * 1000));
+                    Cookies.set("session", "foo", {expires : date}); //set new cookie session
+                    
 					//alert("succes");
 					$("#msg").text("");
 					$("#user_address").val(wallet);
@@ -119,7 +134,7 @@ function verifyUser(){
                     //$("#user_pw").val("");
                     //$("#cpass").val("");
                     $("#user_address").val("");
-             		//alert("Estoy en el parte del else 2");
+             		
                     //open modal alert
 
                     $("#succes_signup_modal").modal("show");
